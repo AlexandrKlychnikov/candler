@@ -1,0 +1,26 @@
+.menu__list
+  display: flex
+  gap: 20px
+  padding: 0
+  li
+    list-style: none
+    @media(max-width: 768px)
+      &:last-child
+        position: relative
+        right: 1px
+    .menu__list-link
+      letter-spacing: 0.075px
+      text-transform: uppercase
+      @media(max-width: 780px)
+        letter-spacing: 0.1px
+
+
+.menu
+  position: relative
+  right: 12.5px
+  @media(max-width: 780px)
+    bottom: 3px
+    right: 16px
+  @media(max-width: 760px)
+    display: none
+

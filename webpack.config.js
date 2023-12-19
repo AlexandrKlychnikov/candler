@@ -17,6 +17,7 @@ const config = {
     static: {
       directory: path.resolve(__dirname, './dist')
     },
+    watchFiles: path.join(__dirname, 'src'),
     historyApiFallback: true,
     port: 4000,
     open: true,

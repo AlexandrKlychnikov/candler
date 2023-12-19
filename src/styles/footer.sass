@@ -1,0 +1,56 @@
+@use './header'
+
+.footer__social-item
+  list-style: none
+
+.footer__inner
+  @extend  .header__inner
+  @media(max-width: 900px)
+    flex-wrap: wrap
+    row-gap: 15px
+    .menu
+      @media(max-width: 768px)
+        top: -1px
+        right: 13 px
+
+
+
+.footer
+  padding-top: 39.12px
+  padding-bottom: 34px
+
+.footer__contacts
+  display: flex
+  flex-direction: column
+  .email
+    margin: 17.7px 0 15px
+    @media(max-width: 768px)
+      margin: 0
+      position: relative
+      right: 1px
+      top: -1px
+  .phone
+    @media(max-width: 768px)
+      position: relative
+      right: 7px
+      top: -2px
+  @media(max-width: 900px)
+    width: 100%
+    justify-self: center
+    align-items: center
+  @media(max-width: 768px)
+    gap: 8px
+
+.footer__social
+  margin: 0
+  padding: 0
+  display: flex
+  gap: 15px
+  @media(max-width: 768px)
+    gap: 8px
+
+
+.footer__social-img
+  @media(max-width: 768px)
+    width: 18px
+    height: 18px

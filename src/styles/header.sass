@@ -3,12 +3,26 @@
 .header
   background: #FFF8F3
   padding-top: 1px
+  @media(max-width: 1000px)
+    padding-top: 2.75px
+  @media(max-width: 480px)
+    padding-top: 0
   .logo
     margin-top: 2px
   .phone
     position: relative
+    right: 10px
+    @media (min-width: 800px) and (max-width: 1000px)
+      right: 19px
     @media(max-width: 768px)
-      right: 4px
+      top: 2px
+      right: 10px
+    @media(max-width: 480px)
+      top: 1px
+      right: -3px
+    @media(max-width: 360px)
+      top: 1px
+      right: 8px
     &::before
       position: absolute
       content: ""
@@ -25,9 +39,15 @@
         top: -3px
 
 .header__inner
+  width: 100%
   display: flex
   justify-content: space-between
   align-items: center
+  gap: 120px
+  @media (min-width: 359px) and (max-width: 1000px)
+    gap: clamp(39px, 5.078vw, 120px)
+
+
 
 
 

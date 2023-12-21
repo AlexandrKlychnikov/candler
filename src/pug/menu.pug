@@ -1,14 +1,21 @@
-nav.menu
-  ul.menu__list
-    li.menu__list-item
-      a.menu__list-link(href="#") О нас
-    li.menu__list-item
-      a.menu__list-link(href="#") Каталог
-    li.menu__list-item
-      a.menu__list-link(href="#") Команда
-    li.menu__list-item
-      a.menu__list-link(href="#") Отзывы
-    li.menu__list-item
-      a.menu__list-link(href="#") Курсы
-    li.menu__list-item
-      a.menu__list-link(href="#") Контакты
+mixin menu(component)
+  nav(class="menu " + component + "__menu")
+    ul.menu__list
+      li.menu__list-item
+        a.menu__list-link(href="#") О нас
+      li.menu__list-item
+        a.menu__list-link(href="#") Каталог
+      li.menu__list-item
+        a.menu__list-link(href="#") Команда
+      li.menu__list-item
+        a.menu__list-link(href="#") Отзывы
+      li.menu__list-item
+        a.menu__list-link(href="#") Курсы
+      li.menu__list-item
+        a.menu__list-link(href="#") Контакты
+    if component === 'header'
+      button.burger-menu
+        span
+        span
+        span
+        span

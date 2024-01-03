@@ -1,3 +1,5 @@
+@use 'sass:list'
+
 .menu__list
   display: flex
   gap: 20px
@@ -51,11 +53,40 @@
       width: 100%
     &:hover
       span
-        height: 1.5px
+        box-shadow: 0.5px 0.5px 0.5px #7B6152
   @media(max-width: 480px)
     top: -3.5px
     left: -2px
   @media(max-width: 360px)
     left: 4px
+  &.close
+    @for $i from 1 through 4
+      span:nth-child(#{$i})
+        z-index: $i + 1
+        animation: uncross-#{$i} 0.75s forwards
+  &.open
+    @for $i from 1 through 4
+      span:nth-child(#{$i})
+        z-index: $i + 1
+        animation: cross-#{$i} 0.75s forwards
 
+$dist: 9px, 3px, -3px, -9px
+$ang: 45deg, 45deg, -45deg, -45deg
 
+@for $i from 1 through 4
+  @keyframes cross-#{$i}
+    from
+      transform: translateY(0)
+    50%
+      transform: translateY(list.nth($dist, $i))
+    to
+      transform: translateY(list.nth($dist, $i)) rotate(list.nth($ang, $i))
+
+@for $i from 1 through 4
+  @keyframes uncross-#{$i}
+    from
+      transform: translateY(list.nth($dist, $i)) rotate(list.nth($ang, $i))
+    50%
+      transform: translateY(list.nth($dist, $i))
+    to
+      transform: translateY(0)

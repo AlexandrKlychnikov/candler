@@ -18,7 +18,6 @@
         letter-spacing: 0.1px
 
 .menu
-  position: relative
   left: 18px
   @media(max-width: 1000px)
     left: -15px
@@ -32,6 +31,25 @@
     order: 3
     .menu__list
       display: none
+      position: absolute
+      top: 0
+      &.open,
+      &.close
+        display: flex
+        flex-direction: column
+        gap: 20px 0
+        z-index: 1
+        width: 153px
+        height: 234px
+        padding: 25px 0px 0px 46px
+        color: #fff8f3
+        background: #7B6152
+      &.open
+        animation: slide-in 1s forwards
+      &.close
+        animation: slide-out 1s forwards
+        &.hidden
+          display: none
 
 .burger-menu
   position: relative
@@ -56,19 +74,27 @@
         box-shadow: 0.5px 0.5px 0.5px #7B6152
   @media(max-width: 480px)
     top: -3.5px
-    left: -2px
+    left: -6px
   @media(max-width: 360px)
-    left: 4px
+    left: 0px
   &.close
     @for $i from 1 through 4
       span:nth-child(#{$i})
         z-index: $i + 1
         animation: uncross-#{$i} 0.75s forwards
   &.open
+    &:hover
+      span
+        box-shadow: 0.5px 0.5px 0.5px #fff
     @for $i from 1 through 4
       span:nth-child(#{$i})
+        background-color: #fff
         z-index: $i + 1
         animation: cross-#{$i} 0.75s forwards
+        &:after // to raise clickable area
+          content: ''
+          position: absolute
+          inset: -7px
 
 $dist: 9px, 3px, -3px, -9px
 $ang: 45deg, 45deg, -45deg, -45deg
@@ -90,3 +116,19 @@ $ang: 45deg, 45deg, -45deg, -45deg
       transform: translateY(list.nth($dist, $i))
     to
       transform: translateY(0)
+
+@keyframes slide-in
+  from
+    opacity: 0
+    right: -200px
+  to
+    opacity: 1
+    right: 0
+
+@keyframes slide-out
+  from
+    right: 0
+    opacity: 1
+  to
+    right: -200px
+    opacity: 0

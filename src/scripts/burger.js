@@ -7,7 +7,6 @@ const burger = () => {
       body.classList.add('menu-is-opened');
       btnBurger.classList.add('open');
       menuList.classList.add('open');
-      menuList.classList.toggle('hidden')
     } else if (btnBurger.classList.contains('open')) {
       btnBurger.classList.remove('menu-is-opened');
       btnBurger.classList.replace('open', 'close');
@@ -16,7 +15,7 @@ const burger = () => {
       btnBurger.classList.add('menu-is-opened');
       btnBurger.classList.replace('close', 'open');
       menuList.classList.replace('close', 'open');
-      menuList.classList.toggle('hidden');
+      menuList.classList.remove('hidden');
     }
   })
   menuList.addEventListener('animationend', (event)=> {

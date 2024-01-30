@@ -1,0 +1,148 @@
+.about
+  background-color: #A5978E
+  height: 535px
+  @media(max-width: 990px)
+    height: 364px
+  @media(max-width: 400px)
+    height: 172px
+
+.about__wrapper
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.about__content
+  margin-top: 129px
+  width: 370px
+  height: min-content
+  display: flex
+  flex-direction: column
+  gap: 15px
+  color: #fafafa
+  @media(max-width: 1200px)
+    width: 299px
+  @media(max-width: 990px)
+    margin-top: 52px
+    width: 199.134px
+    gap: 20px
+  @media(max-width: 700px)
+    margin-top: 52px
+    width: 172px
+    gap: 20px
+  @media(max-width: 400px)
+    margin-top: 26px
+    width: 233.634px
+    gap: 10px
+
+.about__title
+  font-family: "Yeseva One"
+  font-size: 40px
+  font-weight: 400
+  line-height: 115%
+  @media(max-width: 990px)
+    font-size: 15px
+
+.about__images-list
+  position: absolute
+  display: flex
+  align-items: center
+  gap: 19.93px
+  left: 500.33px
+  top: 53px
+  @media(max-width: 1200px)
+    left: 340.33px
+  @media(max-width: 990px)
+    left: 312.33px
+    gap: 9.84px
+  @media(max-width: 600px)
+    align-items: end
+    left: 200px
+    gap: 5px
+  @media(max-width: 400px)
+    top: -37px
+    left: 270px
+  &::before
+    content: ''
+    position: absolute
+    left: -110.33px
+    bottom: -55px
+    width: 22px
+    height: 30px
+    background: url(../assets/images/about-decor.png)
+    @media(max-width: 1200px)
+      left: -22.33px
+    @media(max-width: 990px)
+      bottom: -27px
+    @media(max-width: 600px)
+      left: -12px
+      bottom: -60px
+    @media(max-width: 400px)
+      left: -9px
+      bottom: -42px
+  &::after
+    content: ''
+    position: absolute
+    left: -88.33px
+    bottom: -45px
+    width: 1000%
+    height: 1px
+    background-color: #7B6152
+    @media(max-width: 1200px)
+      left: 0px
+      bottom: -46px
+    @media(max-width: 990px)
+      bottom: -17px
+    @media(max-width: 600px)
+      left: 9px
+      bottom: -52px
+    @media(max-width: 400px)
+      left: 12px
+      bottom: -33px
+.about__images-item
+  color: #fafafa
+  display: flex
+  flex-direction: column
+  gap: 10.29px
+  font-size: 11px
+  @media(max-width: 990px)
+    gap: 4px
+    font-size: 6px
+    font-weight: 200
+  @media(max-width: 600px)
+    .about__images-item__text
+      display: none
+  img
+    @media(max-width: 990px)
+      margin-top: 14px
+      width: 120.627px
+      height: 120px
+    @media(max-width: 600px)
+      margin-top: 76px
+      width: 80px
+      height: 80px
+  &:nth-of-type(3)
+    @media(max-width: 400px)
+      display: none
+  &:nth-of-type(2)
+    @media(max-width: 400px)
+      display: none
+    .about__images-item__text
+      margin-top: -3px
+    img
+      margin-top: -3px
+      @media(max-width: 990px)
+        width: 190.993px
+        height: 195px
+      @media(max-width: 600px)
+        width: 140px
+        height: 140px
+
+.about__text
+  @media(max-width: 990px)
+    font-size: 10px
+    font-weight: 200
+    line-height: 110%
+  @media(max-width: 400px)
+    font-size: 8px
+    line-height: 112.5%
